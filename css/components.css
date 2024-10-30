@@ -1,0 +1,18 @@
+/* Navigation Link Styles */
+.nav-link {
+    color: #000; /* Change to your desired color */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #FFA500; /* Change hover color as desired */
+}
+
+/* Active Link Styles */
+.nav-link.active {
+    color: #FFA500; /* Highlight the active page link */
+}

@@ -1,0 +1,26 @@
+/* Global body font - Default to Poppins */
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300; /* Light weight for default text */
+    font-style: normal;
+}
+
+/* Specific styles for font classes */
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.lily-script-one-regular {
+    font-family: "Lily Script One", cursive;
+    font-weight: 400;
+}
+
+.button-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 600; /* Semi-bold */
+}
+
+.paragraph-text {
+    font-family: "Itim", cursive;
+}

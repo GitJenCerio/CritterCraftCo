@@ -1,0 +1,23 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Utility Styles */
+.text-center {
+    text-align: center;
+}
+
+
+/* Hero Section H1 */
+.hero-text h1 {
+    font-family: "Lily Script One", cursive;
+    font-size: 3rem;
+    color: #333;
+}
