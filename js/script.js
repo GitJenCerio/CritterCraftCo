@@ -61,6 +61,17 @@ function showPaymentNotification() {
     }, 3000);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const payNowButton = document.getElementById("pay-now-btn");
+    
+    if (payNowButton) {
+        payNowButton.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent any default behavior
+            showPaymentNotification(); // Call the function to show notification
+        });
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("product-modal");
     const modalContent = document.getElementById("product-modal-content");
