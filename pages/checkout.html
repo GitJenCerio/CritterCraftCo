@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out - Critter Craft Co.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <!-- Shipping Banner -->
+    <div class="shipping-banner">
+        Free shipping for orders 2000 PHP and above!
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="../public/images/logo.png" alt="Critter Craft Co Logo" class="logo">
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="shop.html" class="nav-link active">Shop</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Checkout Page Content -->
+    <main class="checkout-page">
+        <h1>Check out</h1>
+        <div class="checkout-container">
+            <!-- Customer Information Section -->
+            <div class="checkout-info">
+                <h2>Contact</h2>
+                <input type="email" placeholder="Email" class="checkout-input">
+
+                <h2>Payment</h2>
+                <select class="checkout-input">
+                    <option>QR / e-Wallets</option>
+                </select>
+
+                <h2>Billing Address</h2>
+                <select class="checkout-input">
+                    <option>Country</option>
+                </select>
+                <div class="checkout-name">
+                    <input type="text" placeholder="First Name" class="checkout-input">
+                    <input type="text" placeholder="Last Name" class="checkout-input">
+                </div>
+                <input type="text" placeholder="Address" class="checkout-input">
+                <select class="checkout-input">
+                    <option>Region</option>
+                </select>
+            </div>
+
+            <!-- Order Summary Section -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="order-item">
+                    <div class="order-item-details">
+                        <img src="../public/images/item-image.png" alt="Product" class="order-item-image">
+                        <div>
+                            <div>Personalized Souvenir</div>
+                            <div>₱ 150.00</div>
+                        </div>
+                    </div>
+                    <div class="order-item-quantity">1</div>
+                </div>
+                <div class="order-item">
+                    <div class="order-item-details">
+                        <img src="../public/images/item-image.png" alt="Product" class="order-item-image">
+                        <div>
+                            <div>Customized Notepad</div>
+                            <div>₱ 100.00</div>
+                        </div>
+                    </div>
+                    <div class="order-item-quantity">1</div>
+                </div>
+                <div class="order-total">
+                    <span>Total</span>
+                    <span>₱ 250.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pay Now Button -->
+        
+        <a href="payment.html" class="payment-btn-link">
+        <button class="confirm-order-btn">Confirm Order</button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Critter Craft Co. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>

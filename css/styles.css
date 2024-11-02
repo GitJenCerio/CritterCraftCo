@@ -1,0 +1,74 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Shipping Banner */
+.shipping-banner {
+    background-color: #FF6B35;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Header Layout */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FFF7E7;
+}
+
+.logo {
+    height: 50px;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #FFF;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .social-links a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #FFA500;
+}

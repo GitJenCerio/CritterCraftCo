@@ -16,14 +16,13 @@ This project is organized into distinct folders and files to keep assets, styles
 │   ├── fonts.css             # Font styling, managing typography settings
 │   ├── styles.css            # Global styles shared across pages
 │   └── index.css             # Page-specific styling, applied uniquely on certain pages
-├── scripts/                  # JavaScript directory (to be further developed in future milestones)
+├── js/                       # JavaScript directory (to be further developed in future milestones)
 │   └── script.js             # Main JavaScript file
 └── pages/                    # Directory for additional HTML pages
     ├── about.html            # About page for company and story overview
     ├── cart.html             # Shopping cart page for viewing items before purchase
     ├── checkout.html         # Checkout page for finalizing orders
     ├── contact.html          # Contact page with inquiry form
-    ├── home.html             # Main homepage file
     ├── payment.html          # Payment page for transaction processing
     ├── product_detail.html   # Product detail page for specific item views
     └── shop.html             # Shop section displaying products

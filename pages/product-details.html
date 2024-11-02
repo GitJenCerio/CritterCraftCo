@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- External JavaScript-->
+     <script defer src="../js/script.js"></script>
+
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <!-- Close Button -->
+
+        <span class="close-button">&times;</span>
+    
+        <!-- Product Image and Thumbnails -->
+        <div class="product-image-section">
+            <img src="../public/images/main-image.png" alt="Main Product Image" class="main-product-image">
+            <div class="thumbnail-container">
+                <img src="../public/images/thumbnail-image.png" alt="Thumbnail 1" class="thumbnail">
+                <img src="../public/images/thumbnail-image.png" alt="Thumbnail 2" class="thumbnail">
+            </div>
+        </div>
+    
+        <!-- Product Details -->
+        <div class="product-details-section">
+            <h1 class="product-title">Item Name</h1> 
+            <p class="product-price">₱ Item Price</p>
+            
+            <!-- Quantity Control -->
+            <div class="quantity-section">
+                <label for="quantity">Quantity</label>
+                <div class="quantity-control">
+                    <button class="quantity-btn">-</button>
+                    <input type="text" id="quantity" value="1">
+                    <button class="quantity-btn">+</button>
+                </div>
+            </div>
+    
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="buy-now-btn">Buy it now</button>
+            </div>
+    
+            <!-- Product Description -->
+            <h2 class="description-title">Item Description</h2>
+            <p class="product-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
