@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - Critter Craft Co.</title>
+
+    <!-- External JavaScript-->
+    <script defer src="../js/script.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Poppins:wght@300&display=swap" rel="stylesheet">
-    
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/components.css">
@@ -18,9 +21,7 @@
 </head>
 <body>
     <!-- Shipping Banner -->
-    <div class="shipping-banner">
-        Free shipping for orders 2000 PHP and above!
-    </div>
+    <div class="shipping-banner">Free shipping for orders 2000 PHP and above!</div>
 
     <!-- Header with Logo, Navigation, and Cart Icon -->
     <header class="header">
@@ -33,11 +34,10 @@
         </nav>
         <a href="cart.html" class="cart-icon">
             <img src="../public/images/icon-cart.png" alt="Cart" width="30" height="30">
-            <span class="cart-count">2</span> <!-- Cart count, adjust dynamically as needed -->
-        </a>
+            <span class="cart-count"></span> <!-- Dynamically updated -->
+        </a>        
     </header>
 
-    <!-- Cart Page Content -->
     <main class="cart-page">
         <h1>Your cart</h1>
 
@@ -48,56 +48,41 @@
                 <span>Quantity</span>
                 <span>Total</span>
             </div>
-
-            <div class="cart-item">
-                <div class="item-details">
-                    <img src="../public/images/item-image.png" alt="Product Image">
-                    <div>
-                        <div class="product-name">Personalized Souvenir</div>
-                        <div class="product-price">₱150.00</div>
-                    </div>
-                </div>
-                <div class="quantity-control">
-                    <button class="quantity-btn">-</button>
-                    <span class="quantity">1</span>
-                    <button class="quantity-btn">+</button>
-                </div>
-                <div class="total-price">₱150.00</div>
-            </div>
-
-            <div class="cart-item">
-                <div class="item-details">
-                    <img src="../public/images/item-image.png" alt="Product Image">
-                    <div>
-                        <div class="product-name">Customized Notepad</div>
-                        <div class="product-price">₱100.00</div>
-                    </div>
-                </div>
-                <div class="quantity-control">
-                    <button class="quantity-btn">-</button>
-                    <span class="quantity">1</span>
-                    <button class="quantity-btn">+</button>
-                </div>
-                <div class="total-price">₱100.00</div>
-            </div>
         </div>
+
+        <!-- Template for Cart Item -->
+        <template id="cart-item-template">
+            <div class="cart-item">
+                <div class="item-details">
+                    <img src="" alt="" class="item-image">
+                    <div>
+                        <div class="product-name"></div>
+                        <div class="product-price"></div>
+                    </div>
+                </div>
+                <div class="quantity-control">
+                    <input type="number" class="quantity" min="1">
+                </div>
+                <div class="total-price"></div>
+                <img src="../public/images/icon-delete.png" class="delete-icon" alt="Delete">
+            </div>
+        </template>
 
         <!-- Cart Summary -->
         <div class="cart-summary">
             <div class="estimated-total">
                 <span>Estimated total</span>
-                <span>₱250.00</span>
+                <span>₱0.00</span>
             </div>
-            <p class="tax-note">Taxes, discount and shipping calculated at checkout</p>
+            <p class="tax-note">Taxes, discount, and shipping calculated at checkout</p>
             <a href="checkout.html" class="checkout-btn-link">
                 <button class="checkout-btn">Check out</button>
             </a>
         </div>
-
     </main>
 
-     <!-- Footer -->
-     <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <p>&copy; 2024 Critter Craft Co. All Rights Reserved.</p>
         <div class="social-links">
             <a href="https://www.facebook.com/profile.php?id=61556898350697" aria-label="Facebook">Facebook</a>

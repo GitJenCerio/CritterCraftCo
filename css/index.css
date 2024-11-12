@@ -230,6 +230,16 @@
     color: #FF6B35;
 }
 
+.product-modal.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
 
 /* Product Image Section */
 .product-image-section {
@@ -396,7 +406,7 @@
 /* Cart Table Header */
 .cart-table-header, .cart-item {
     display: grid;
-    grid-template-columns: 6fr 2.5fr 0fr;
+    grid-template-columns: 6fr 2.5fr 0fr 1.5fr;
     align-items: center;
     padding: 30px 0;
     border-bottom: 2px solid #E0E0E0;
@@ -455,12 +465,24 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Total Price */
+
 .total-price {
     font-family: "Poppins", sans-serif;
     color: #333;
     font-weight: bold;
     text-align: right;
+}
+
+.delete-icon {
+    cursor: pointer;
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    transition: opacity 0.3s;
+    justify-self: end;
+}
+
+.delete-icon:hover {
+    opacity: 0.7; /* Slight transparency on hover to indicate interactivity */
 }
 
 /* Cart Summary */
@@ -741,7 +763,7 @@
 
 .order-item-details {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 10px;
 }
 
@@ -772,43 +794,51 @@
     font-weight: bold;
     color: #333;
 }
+.confirm-order-section {
+    text-align: center;
+    margin-top: 20px;
+}
 
 .confirm-order-btn {
-    margin-top: 20px;
-    padding: 15px 30px;
+    padding: 10px 20px;
     background-color: #FFC107;
     color: #333;
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
-.confirm-order:hover {
+.confirm-order-btn:hover {
     background-color: #FFA000;
 }
 
-/* Pay Now Button */
-.pay-now-btn {
+.pay-now-section {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
     margin-top: 20px;
-    padding: 15px 30px;
+    height: 100px;           /* Adjust height as needed */
+}
+
+.pay-now-btn {
+    padding: 10px 20px;
     background-color: #FFC107;
     color: #333;
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
 }
 
 .pay-now-btn:hover {
     background-color: #FFA000;
 }
+
 
 /* Payment Notification */
 .payment-notification {

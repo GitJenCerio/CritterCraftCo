@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Critter Craft Co.</title>
 
-     <!-- External JavaScript-->
-     <script defer src="../js/script.js"></script>
+    <!-- External JavaScript-->
+    <script defer src="../js/script.js"></script> <!-- New JS file for dynamic content -->
 
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,23 +51,29 @@
                 <a href="https://www.gcash.com/" target="_blank" class="method-option">GCASH</a>
             </div>
 
-    <!-- Order Summary Section -->
-        <div class="order-summary">
-            <h2>Order Summary</h2>
-            <div class="summary-item">
-                <span>Purchase</span>
-                <span>₱ 250.00</span>
+            <!-- Order Summary Section -->
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-items"></div> <!-- Dynamic order items will go here -->
+
+                <!-- Template for Order Summary Items -->
+                <template id="summary-item-template">
+                    <div class="summary-item">
+                        <span class="item-name"></span>
+                        <span class="item-total"></span>
+                    </div>
+                </template>
+
+                <div class="summary-total">
+                    <span>Total amount</span>
+                    <span class="total-amount">₱0.00</span>
+                </div>
             </div>
-            <div class="summary-total">
-                <span>Total amount</span>
-                <span>₱ 250.00</span>
-            </div>
-            <!-- Pay Now Button -->
-            <button id="pay-now-btn" class="pay-now-btn">Pay Now</button>
         </div>
 
-
-            
+        <!-- Pay Now Button at the Bottom -->
+        <div class="pay-now-section">
+            <button id="pay-now-btn" class="pay-now-btn">Pay Now</button>
         </div>
     </main>
 

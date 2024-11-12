@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check Out - Critter Craft Co.</title>
+
+    <!-- External JavaScript-->
+    <script defer src="../js/script.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,12 +18,11 @@
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script defer src="../js/checkout.js"></script> <!-- External JS for checkout -->
 </head>
 <body>
     <!-- Shipping Banner -->
-    <div class="shipping-banner">
-        Free shipping for orders 2000 PHP and above!
-    </div>
+    <div class="shipping-banner">Free shipping for orders 2000 PHP and above!</div>
 
     <!-- Header -->
     <header class="header">
@@ -64,37 +66,35 @@
             <!-- Order Summary Section -->
             <div class="order-summary">
                 <h2>Order Summary</h2>
-                <div class="order-item">
-                    <div class="order-item-details">
-                        <img src="../public/images/item-image.png" alt="Product" class="order-item-image">
-                        <div>
-                            <div>Personalized Souvenir</div>
-                            <div>₱ 150.00</div>
+                <div class="order-items"></div> <!-- Dynamic items will be added here -->
+
+                <!-- Order Summary Template -->
+                <template id="order-item-template">
+                    <div class="order-item">
+                        <div class="order-item-details">
+                            <img src="" alt="Product" class="order-item-image">
+                            <div>
+                                <div class="product-name"></div>
+                                <div class="product-price"></div> <!-- Shows "price x quantity" -->
+                            </div>
                         </div>
+                        <div class="total-price"></div> <!-- Shows the item total -->
                     </div>
-                    <div class="order-item-quantity">1</div>
-                </div>
-                <div class="order-item">
-                    <div class="order-item-details">
-                        <img src="../public/images/item-image.png" alt="Product" class="order-item-image">
-                        <div>
-                            <div>Customized Notepad</div>
-                            <div>₱ 100.00</div>
-                        </div>
-                    </div>
-                    <div class="order-item-quantity">1</div>
-                </div>
+                </template>
+
                 <div class="order-total">
                     <span>Total</span>
-                    <span>₱ 250.00</span>
+                    <span class="total-amount">₱0.00</span>
                 </div>
             </div>
         </div>
 
-        <!-- Pay Now Button -->
-        
-        <a href="payment.html" class="payment-btn-link">
-        <button class="confirm-order-btn">Confirm Order</button>
+        <!-- Confirm Order Button at the Bottom -->
+        <div class="confirm-order-section">
+            <a href="payment.html" class="payment-btn-link">
+                <button class="confirm-order-btn">Confirm Order</button>
+            </a>
+        </div>
     </main>
 
     <!-- Footer -->
