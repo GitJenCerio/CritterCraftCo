@@ -18,59 +18,68 @@ body {
     font-size: 1rem;
 }
 
-/* Header Layout */
+/* Navigation Links */
+.nav-link {
+    color: #000; /* Change the text color to black */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Add some weight for better visibility */
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+    color: #8b8b8b; /* Optional: A slightly lighter black for hover effect */
+    text-decoration: none; /* Optional: Add underline on hover */
+}
+
+/* Active Link */
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #FFC107; /* Keep active links black */
+}
+
+
+/* Header */
 .header {
+    background-color: #FFF7E7;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #FFF7E7;
 }
 
 .logo {
     height: 50px;
 }
 
-
-body {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
-}
-
-/* Footer */
+/* Footer Styles */
 .footer {
-    background-color: #333;
-    color: #FFF;
-    padding: 20px 0;
-    text-align: center;
+    background-color: #333; /* Dark gray background */
+    color: #FFF; /* White text */
 }
 
 .footer p {
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* Slightly smaller font size */
     margin-bottom: 10px;
 }
 
-.footer .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.footer .social-links a {
-    color: #FFF;
-    text-decoration: none;
+.footer .footer-link {
+    color: #FFC107; /* Yellow link color */
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
-.footer .social-links a:hover {
-    color: #FFA500;
+.footer .footer-link:hover {
+    color: #FFA000; /* Slightly darker yellow on hover */
 }
 
+/* Utility Classes */
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
+img {
+    max-width: 100%;
+    height: auto;
+}
