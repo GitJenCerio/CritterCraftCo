@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Critter Craft Co.</title>
 
-         <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- External JavaScript-->
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/cart.js"></script>
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
     <!-- Free Shipping Banner -->
@@ -31,131 +29,53 @@
     <header class="header py-3 px-4 d-flex justify-content-between align-items-center">
         <img src="../public/images/logo.png" alt="Critter Craft Co Logo" class="logo" height="50">
         <nav class="nav">
-            <a href="/index.html" class="nav-link ">Home</a>
+            <a href="/index.html" class="nav-link">Home</a>
             <a href="../pages/about.html" class="nav-link">About</a>
             <a href="../pages/shop.html" class="nav-link active">Shop</a>
             <a href="../pages/contact.html" class="nav-link">Contact</a>
-        </nav>        
-        <a href="../pages/cart.html">
+        </nav>
+        <a href="../pages/cart.html" class="cart-icon">
             <img src="../public/images/icon-cart.png" alt="Cart" width="30" height="30">
+            <span class="cart-count">0</span>
         </a>
     </header>
 
     <!-- Shop Page Content -->
-    <main class="shop-page">
-        <!-- Product Card 1 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 1" class="product-image" data-name="Customized Keychain" data-price="50 PHP">
-            <div class="product-name" data-name="Customized Keychain" data-price="50 PHP">Customized Keychain</div>
-            <div class="product-price">50 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 2 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 2" class="product-image" data-name="Birthday Magnet" data-price="70 PHP">
-            <div class="product-name" data-name="Birthday Magnet" data-price="70 PHP">Birthday Magnet</div>
-            <div class="product-price">70 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 3 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 3" class="product-image" data-name="Christening Souvenir" data-price="80 PHP">
-            <div class="product-name" data-name="Christening Souvenir" data-price="80 PHP">Christening Souvenir</div>
-            <div class="product-price">80 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 4 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 4" class="product-image" data-name="Customized Chip Bag" data-price="60 PHP">
-            <div class="product-name" data-name="Customized Chip Bag" data-price="60 PHP">Customized Chip Bag</div>
-            <div class="product-price">60 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 5 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 5" class="product-image" data-name="Fridge Magnet" data-price="65 PHP">
-            <div class="product-name" data-name="Fridge Magnet" data-price="65 PHP">Fridge Magnet</div>
-            <div class="product-price">65 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 6 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 6" class="product-image" data-name="Personalized Mug" data-price="90 PHP">
-            <div class="product-name" data-name="Personalized Mug" data-price="90 PHP">Personalized Mug</div>
-            <div class="product-price">90 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 7 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 7" class="product-image" data-name="Wedding Favor" data-price="120 PHP">
-            <div class="product-name" data-name="Wedding Favor" data-price="120 PHP">Wedding Favor</div>
-            <div class="product-price">120 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 8 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 8" class="product-image" data-name="Anniversary Gift" data-price="150 PHP">
-            <div class="product-name" data-name="Anniversary Gift" data-price="150 PHP">Anniversary Gift</div>
-            <div class="product-price">150 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 9 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 9" class="product-image" data-name="Graduation Keepsake" data-price="85 PHP">
-            <div class="product-name" data-name="Graduation Keepsake" data-price="85 PHP">Graduation Keepsake</div>
-            <div class="product-price">85 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 10 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 10" class="product-image" data-name="Holiday Ornament" data-price="95 PHP">
-            <div class="product-name" data-name="Holiday Ornament" data-price="95 PHP">Holiday Ornament</div>
-            <div class="product-price">95 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 11 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 11" class="product-image" data-name="Custom Notebook" data-price="75 PHP">
-            <div class="product-name" data-name="Custom Notebook" data-price="75 PHP">Custom Notebook</div>
-            <div class="product-price">75 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-        <!-- Product Card 12 -->
-        <div class="product-card">
-            <img src="../public/images/item-image.png" alt="Product Image 12" class="product-image" data-name="Personalized Pen" data-price="30 PHP">
-            <div class="product-name" data-name="Personalized Pen" data-price="30 PHP">Personalized Pen</div>
-            <div class="product-price">30 PHP</div>
-            <a href="#" class="add-to-cart-btn">Add to Cart</a>
-        </div>
-
-
-        <!-- Modal Container -->
-        <div id="product-modal" class="product-modal">
-            <div id="product-modal-content" class="modal-content">
-            </div>
+    <main class="shop-page container py-5">
+        <div class="row g-4" id="product-list">
+            <!-- Products will be dynamically loaded here -->
         </div>
     </main>
+    <div id="product-details-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title product-title">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="Product Image" class="main-product-image img-fluid mb-3">
+                    <p class="product-price"></p>
+                    <p class="product-description"></p>
+                    <div class="quantity-control d-flex align-items-center mb-3">
+                        <label for="quantity" class="me-3">Quantity</label>
+                        <input type="number" id="quantity" class="form-control" min="1" value="1" style="width: 80px;">
+                    </div>
+                    <button class="btn btn-warning add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <!-- Footer -->
     <footer class="footer mt-auto bg-dark text-white text-center py-3">
         <p class="mb-1">&copy; 2024 Critter Craft Co. All Rights Reserved.</p>
         <div class="d-flex justify-content-center gap-3">
-            <a href="https://www.facebook.com/profile.php?id=61556898350697" class="text-decoration-none footer-link">Facebook</a>
-            <a href="#" class="text-decoration-none footer-link">Instagram</a>
-            <a href="#" class="text-decoration-none footer-link">Twitter</a>
+            <a href="#" class="text-decoration-none text-white">Facebook</a>
+            <a href="#" class="text-decoration-none text-white">Instagram</a>
+            <a href="#" class="text-decoration-none text-white">Twitter</a>
         </div>
     </footer>
-    
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>

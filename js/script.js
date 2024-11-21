@@ -37,40 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Function to show payment notification and redirect to home page
-function showPaymentNotification() {
-    const notification = document.createElement("div");
-    notification.classList.add("payment-notification");
-    notification.textContent = "Payment successful!";
-    
-    // Center the notification on the page
-    notification.style.position = "fixed";
-    notification.style.top = "50%";
-    notification.style.left = "50%";
-    notification.style.transform = "translate(-50%, -50%)";
-    notification.style.padding = "1em";
-    notification.style.backgroundColor = "#333";
-    notification.style.color = "#fff";
-    notification.style.borderRadius = "8px";
-    
-    document.body.appendChild(notification);
 
-    setTimeout(() => {
-        notification.remove();
-        window.location.href = "../index.html"; 
-    }, 3000);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const payNowButton = document.getElementById("pay-now-btn");
-    
-    if (payNowButton) {
-        payNowButton.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent any default behavior
-            showPaymentNotification(); // Call the function to show notification
-        });
-    }
-});
 
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("product-modal");
@@ -359,3 +326,5 @@ function displayOrderSummary() {
 
     document.querySelector(".total-amount").textContent = `₱${totalAmount.toFixed(2)}`;
 }
+
+
