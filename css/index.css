@@ -157,15 +157,6 @@
     margin-bottom: 5px;
 }
 
-.product-card .product-price {
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-
-
 /* Product Card Styles */
 .product-card {
     position: relative; 
@@ -308,12 +299,6 @@
     margin-bottom: 10px;
 }
 
-.product-price {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-    color: #FFC107;
-    margin-bottom: 20px;
-}
 
 .quantity-section {
     display: flex;
@@ -413,27 +398,20 @@
     color: #999;
 }
 
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.modal-content {
+    position: relative;
+    border: 2px solid #ccc; /* Adds a border around the modal */
+    padding: 20px;         /* Adds space inside the modal content */
+    border-radius: 10px;   /* Adds rounded corners to the border */
+    background-color: #fff; /* Optional: Ensure the modal background remains white */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
 }
 
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
+.modal-dialog {
+    margin: 30px auto; /* Adds space around the modal from the viewport edges */
+    max-width: 800px;  /* Optional: Control the maximum width of the modal */
 }
+
 
 .close-button {
     position: absolute;
@@ -466,7 +444,8 @@
 .product-price {
     font-family: "Poppins", sans-serif;
     color: #333;
-    font-size: 0.875rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* Quantity Control */

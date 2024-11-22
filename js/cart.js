@@ -1,108 +1,251 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const productList = document.getElementById("product-list");
+    const modal = document.getElementById("product-details-modal");
+
+    if (!productList || !modal) {
+        console.error("Error: Product list or modal container not found.");
+        return;
+    }
+
+    // Dynamically create product cards
+    products.forEach((product, index) => {
+        const productCard = document.createElement("div");
+        productCard.className = "col-md-4"; // Bootstrap column class
+        productCard.innerHTML = `
+            <div class="card" data-index="${index}">
+                <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">₱${product.price}</p>
+                    <button class="btn btn-warning add-to-cart-btn"
+                        data-name="${product.name}"
+                        data-price="${product.price}"
+                        data-image="${product.image}">Add to Cart</button>
+                </div>
+            </div>`;
+        productList.appendChild(productCard);
+    });
+
+    // Add event listener for product card clicks (excluding Add to Cart button)
+    productList.addEventListener("click", (event) => {
+        // Check if the Add to Cart button was clicked
+        if (event.target.classList.contains("add-to-cart-btn")) {
+            // Add product to cart
+            const button = event.target;
+            const product = {
+                name: button.getAttribute("data-name"),
+                price: parseFloat(button.getAttribute("data-price")),
+                image: button.getAttribute("data-image"),
+                quantity: 1
+            };
+            addToCart(product); // Add product to cart
+            return; // Prevent modal from opening
+        }
+
+        // Open modal for product card clicks
+        const card = event.target.closest(".card");
+        if (card) {
+            const productIndex = card.getAttribute("data-index");
+            const product = products[productIndex];
+            if (product) {
+                showModal(product, modal);
+            }
+        }
+    });
+
+    // Add functionality for Add to Cart button on cards
+    setupAddToCartButtons();
+});
+
+function showModal(product, modal) {
+    let images = [product.image, ...product.thumbnails]; // Include main image as the first image in the sequence
+    let currentImageIndex = 0; // Initialize current image index to 0 (main image)
+
+    // Populate modal details
+    modal.querySelector(".modal-title").textContent = product.name;
+    modal.querySelector(".main-product-image").src = images[currentImageIndex]; // Set the main product image
+    modal.querySelector(".product-price").textContent = `₱${product.price}`;
+    modal.querySelector(".product-description").textContent = product.description;
+
+    // Add the Add to Cart button
+    const addToCartButton = modal.querySelector(".add-to-cart-modal-btn");
+    if (addToCartButton) {
+        addToCartButton.onclick = () => {
+            addToCart({
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            });
+        };
+    }
+
+    // Populate thumbnails
+    const thumbnailContainer = modal.querySelector(".thumbnail-container");
+    thumbnailContainer.innerHTML = ""; // Clear existing thumbnails
+
+    images.forEach((image, index) => {
+        const thumbnailImg = document.createElement("img");
+        thumbnailImg.src = image;
+        thumbnailImg.alt = `Thumbnail ${index + 1}`;
+        thumbnailImg.className = "img-thumbnail";
+        thumbnailImg.style.cursor = "pointer";
+        thumbnailImg.style.width = "100px";
+
+        // Change main image on thumbnail click
+        thumbnailImg.addEventListener("click", () => {
+            currentImageIndex = index; // Update current index
+            modal.querySelector(".main-product-image").src = image;
+        });
+
+        thumbnailContainer.appendChild(thumbnailImg);
+    });
+
+    // Add navigation functionality to arrows
+    const navButtons = modal.querySelectorAll(".image-nav-btn");
+    navButtons.forEach(button => {
+        button.onclick = () => {
+            const direction = button.getAttribute("data-direction");
+            if (direction === "left") {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            } else if (direction === "right") {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+            modal.querySelector(".main-product-image").src = images[currentImageIndex];
+        };
+    });
+
+    // Show modal using Bootstrap API
+    const bootstrapModal = new bootstrap.Modal(modal);
+    bootstrapModal.show();
+}
+
+
+
 const products = [
     {
         name: "Customized Keychain",
         price: 50,
         image: "../public/images/item-image.png",
-        description: "A personalized keychain that adds a unique touch to your daily essentials. Perfect for gifts and giveaways."
+        description: "A personalized keychain that adds a unique touch to your daily essentials. Perfect for gifts and giveaways.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Birthday Magnet",
         price: 70,
         image: "../public/images/item-image.png",
-        description: "Celebrate special birthdays with a custom magnet that serves as a memorable keepsake."
+        description: "Celebrate special birthdays with a custom magnet that serves as a memorable keepsake.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Christening Souvenir",
         price: 80,
         image: "../public/images/item-image.png",
-        description: "Elegant and meaningful souvenirs to commemorate a christening ceremony."
+        description: "Elegant and meaningful souvenirs to commemorate a christening ceremony.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Customized Chip Bag",
         price: 60,
         image: "../public/images/item-image.png",
-        description: "Add a creative flair to your events with these customized chip bags. Perfect for party favors!"
+        description: "Add a creative flair to your events with these customized chip bags. Perfect for party favors!",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Fridge Magnet",
         price: 65,
         image: "../public/images/item-image.png",
-        description: "Decorate your fridge with a personalized magnet that keeps your memories alive every day."
+        description: "Decorate your fridge with a personalized magnet that keeps your memories alive every day.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Personalized Mug",
         price: 90,
         image: "../public/images/item-image.png",
-        description: "Start your day with your favorite beverage in a mug personalized just for you."
+        description: "Start your day with your favorite beverage in a mug personalized just for you.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Wedding Favor",
         price: 120,
         image: "../public/images/item-image.png",
-        description: "Charming wedding favors to thank your guests for sharing in your special day."
+        description: "Charming wedding favors to thank your guests for sharing in your special day.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Anniversary Gift",
         price: 150,
         image: "../public/images/item-image.png",
-        description: "Celebrate love and milestones with a heartfelt anniversary gift tailored to your liking."
+        description: "Celebrate love and milestones with a heartfelt anniversary gift tailored to your liking.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Graduation Keepsake",
         price: 85,
         image: "../public/images/item-image.png",
-        description: "Mark a proud moment with a keepsake that celebrates academic achievements."
+        description: "Mark a proud moment with a keepsake that celebrates academic achievements.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Holiday Ornament",
         price: 95,
         image: "../public/images/item-image.png",
-        description: "Decorate your home for the holidays with a personalized ornament that spreads cheer."
+        description: "Decorate your home for the holidays with a personalized ornament that spreads cheer.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Custom Notebook",
         price: 75,
         image: "../public/images/item-image.png",
-        description: "A practical and stylish custom notebook for jotting down thoughts, ideas, and plans."
+        description: "A practical and stylish custom notebook for jotting down thoughts, ideas, and plans.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
     {
         name: "Personalized Pen",
         price: 30,
         image: "../public/images/item-image.png",
-        description: "A sleek pen with a personal touch – perfect for daily use or as a thoughtful gift."
+        description: "A sleek pen with a personal touch – perfect for daily use or as a thoughtful gift.",
+        thumbnails: [
+            "../public/images/thumbnail1.png",
+            "../public/images/thumbnail2.png"
+        ]
     },
 ];
 
 
-
-
-// Load products into the shop
-document.addEventListener("DOMContentLoaded", () => {
-    const productList = document.getElementById("product-list");
-    if (!productList) {
-        console.error("Error: Product list container not found.");
-        return;
-    }
-
-    // Dynamically create product cards
-    products.forEach(product => {
-        const productCard = document.createElement("div");
-        productCard.className = "col-md-4"; // Bootstrap column class
-        productCard.innerHTML = `
-            <div class="card">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Price: ${product.price} PHP</p>
-                    <button class="btn btn-warning add-to-cart-btn" 
-                            data-name="${product.name}" 
-                            data-price="${product.price}" 
-                            data-image="${product.image}">Add to Cart</button>
-                </div>
-            </div>`;
-        productList.appendChild(productCard);
-    });
-});
 
 // Function to add an item to the cart
 function addToCart(item) {
@@ -124,9 +267,10 @@ function addToCart(item) {
     // Update the cart count in the header
     updateCartCount();
 
-    // Notify the user
-    alert(`${item.name} has been added to the cart!`);
+    // Show a custom notification instead of alert
+    showAddToCartNotification(item.name);
 }
+
 
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -317,32 +461,7 @@ function addToCart(item) {
     alert(`${item.name} has been added to the cart!`);
 }
 
-// Function to set up "Add to Cart" buttons
-function setupAddToCartButtons() {
-    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
 
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-
-            // Extract product details from the button's data attributes
-            const productName = button.getAttribute("data-name");
-            const productPrice = parseFloat(button.getAttribute("data-price"));
-            const productImage = button.getAttribute("data-image");
-
-            // Create the item object
-            const cartItem = {
-                name: productName,
-                price: productPrice,
-                image: productImage,
-                quantity: 1
-            };
-
-            // Add the item to the cart
-            addToCart(cartItem);
-        });
-    });
-}
 
 // Function to handle the "Pay Now" button click
 function handlePayNow(event) {
@@ -377,77 +496,3 @@ document.addEventListener("DOMContentLoaded", () => {
         payNowButton.addEventListener("click", handlePayNow); // Attach the checkout handler
     }
 });
-
-// Load products into the shop and enable details viewing
-document.addEventListener("DOMContentLoaded", () => {
-    const productList = document.getElementById("product-list");
-    if (!productList) {
-        console.error("Error: Product list container not found.");
-        return;
-    }
-
-    // Dynamically create product cards
-    products.forEach((product, index) => {
-        const productCard = document.createElement("div");
-        productCard.className = "col-md-4"; // Bootstrap column class
-        productCard.innerHTML = `
-            <div class="card">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Price: ₱${product.price}</p>
-                    <button class="btn btn-primary view-details-btn" 
-                            data-index="${index}">View Details</button>
-                </div>
-            </div>`;
-        productList.appendChild(productCard);
-    });
-
-    // Set up event listeners for product details
-    setupProductDetails();
-});
-
-// Function to set up product details viewing
-function setupProductDetails() {
-    const viewDetailsButtons = document.querySelectorAll(".view-details-btn");
-    const modal = document.getElementById("product-details-modal");
-
-    viewDetailsButtons.forEach(button => {
-        button.addEventListener("click", (event) => {
-            const productIndex = event.target.getAttribute("data-index");
-            const product = products[productIndex];
-
-            if (modal) {
-                modal.querySelector(".product-title").textContent = product.name;
-                modal.querySelector(".main-product-image").src = product.image;
-                modal.querySelector(".product-price").textContent = `₱${product.price}`;
-                modal.querySelector(".product-description").textContent =
-                    "This is a detailed description of the product.";
-                
-                // Show the modal
-                const bootstrapModal = new bootstrap.Modal(modal);
-                bootstrapModal.show();
-            }
-        });
-    });
-}
-
-products.forEach((product, index) => {
-    const productCard = document.createElement("div");
-    productCard.className = "col-md-4"; // Bootstrap column class
-    productCard.innerHTML = `
-        <div class="card">
-            <img src="${product.image}" class="card-img-top view-details-btn" alt="${product.name}" data-index="${index}">
-            <div class="card-body">
-                <h5 class="card-title">${product.name}</h5>
-                <p class="card-text">Price: ₱${product.price}</p>
-                <button class="btn btn-primary view-details-btn" data-index="${index}">View Details</button>
-            </div>
-        </div>`;
-    productList.appendChild(productCard);
-});
-
-
-
-
-
