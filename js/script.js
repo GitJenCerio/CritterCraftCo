@@ -1,8 +1,45 @@
-// Function to handle form submission
-function submitForm(event) {
-    event.preventDefault(); 
-    alert("Form submitted successfully!");
-}
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Simulate form submission success
+            showSubmissionNotification();
+
+            // Optionally clear form fields
+            form.reset();
+        });
+
+        function showSubmissionNotification() {
+            // Create the notification element
+            const notification = document.createElement("div");
+            notification.className = "submission-notification";
+            notification.textContent = "We received your inquiry. Please check your email for updates.";
+
+            // Style the notification
+            notification.style.position = "fixed";
+            notification.style.top = "20px";
+            notification.style.right = "20px";
+            notification.style.padding = "10px 20px";
+            notification.style.backgroundColor = "#FFC107"; 
+            notification.style.color = "#333";
+            notification.style.fontSize = "16px";
+            notification.style.borderRadius = "5px";
+            notification.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.2)";
+            notification.style.zIndex = "9999";
+
+            // Add the notification to the document
+            document.body.appendChild(notification);
+
+            // Remove the notification after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    });
+
 
 // Function to show notification when item is added to cart
 document.addEventListener("DOMContentLoaded", function () {
@@ -43,7 +80,7 @@ function updateTotalPrice() {
     document.querySelectorAll(".cart-item").forEach(cartItem => {
         // Get the quantity and price of the item
         const quantityElement = cartItem.querySelector(".quantity");
-        const quantity = parseInt(quantityElement.value); // Updated to use value from input
+        const quantity = parseInt(quantityElement.value); 
         const priceText = cartItem.querySelector(".product-price").textContent;
         
         // Extract price as a number
@@ -80,7 +117,7 @@ document.querySelectorAll(".cart-item").forEach(cartItem => {
 
     // Allow direct editing in quantity input field
     quantityInput.addEventListener("input", () => {
-        if (quantityInput.value < 1) quantityInput.value = 1; // Ensure minimum quantity of 1
+        if (quantityInput.value < 1) quantityInput.value = 1;
         updateTotalPrice();
     });
 
