@@ -34,7 +34,7 @@
     </nav>
     <a href="./cart.html" class="cart-container">
         <img src="../public/images/icon-cart.png" alt="Cart" class="cart-icon">
-        <span class="cart-count">0</span>
+        <span class="cart-count">3</span>
     </a>    
 </header>
 
@@ -48,31 +48,58 @@
                 <span>Quantity</span>
                 <span>Total</span>
             </div>
-        </div>
-
-        <!-- Template for Cart Item -->
-        <template id="cart-item-template">
+            <!-- Cart Items -->
             <div class="cart-item">
                 <div class="item-details">
-                    <img src="" alt="" class="item-image">
+                    <img src="../public/images/personalized-coaster.jpg" alt="Personalized Coaster" class="item-image">
                     <div>
-                        <div class="product-name"></div>
-                        <div class="product-price"></div>
+                        <div class="product-name">Personalized Coaster</div>
+                        <div class="product-price">₱350.00</div>
                     </div>
                 </div>
                 <div class="quantity-control">
-                    <input type="number" class="quantity" min="1">
+                    <input type="number" class="quantity" value="1" min="1">
                 </div>
-                <div class="total-price"></div>
+                <div class="total-price">₱350.00</div>
                 <img src="../public/images/icon-delete.png" class="delete-icon" alt="Delete">
             </div>
-        </template>
+
+            <div class="cart-item">
+                <div class="item-details">
+                    <img src="../public/images/personalized-flask.jpg" alt="Personalized Flask" class="item-image">
+                    <div>
+                        <div class="product-name">Personalized Flask</div>
+                        <div class="product-price">₱550.00</div>
+                    </div>
+                </div>
+                <div class="quantity-control">
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <div class="total-price">₱550.00</div>
+                <img src="../public/images/icon-delete.png" class="delete-icon" alt="Delete">
+            </div>
+
+            <div class="cart-item">
+                <div class="item-details">
+                    <img src="../public/images/modern-planner.jpg" alt="Modern Planner" class="item-image">
+                    <div>
+                        <div class="product-name">Modern Planner</div>
+                        <div class="product-price">₱799.00</div>
+                    </div>
+                </div>
+                <div class="quantity-control">
+                    <input type="number" class="quantity" value="1" min="1">
+                </div>
+                <div class="total-price">₱799.00</div>
+                <img src="../public/images/icon-delete.png" class="delete-icon" alt="Delete">
+            </div>
+        </div>
 
         <!-- Cart Summary -->
         <div class="cart-summary">
             <div class="estimated-total">
                 <span>Estimated total</span>
-                <span>₱0.00</span>
+                <span>₱1,699.00</span>
             </div>
             <p class="tax-note">Taxes, discount, and shipping calculated at checkout</p>
             <a href="checkout.html" class="checkout-btn-link">
