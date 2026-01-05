@@ -3,79 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Critter Craft Co and our handcrafted personalized souvenirs">
     <title>About Us - Critter Craft Co.</title>
 
-        <!-- External JavaScript-->
-        <script defer src="../js/script.js"></script>
-        <script defer src="../js/cart.js"></script>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    
-         <!-- Bootstrap CSS -->
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-     
-         <!-- Bootstrap JS -->
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-     
-         <!-- Google Fonts -->
-         <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Poppins:wght@300&display=swap" rel="stylesheet">
-     
-         <!-- Custom CSS -->
-         <link rel="stylesheet" href="../css/fonts.css">
-         <link rel="stylesheet" href="../css/styles.css">
-         <link rel="stylesheet" href="../css/index.css">
-     </head>
-     <body class="d-flex flex-column min-vh-100">
-         <!-- Free Shipping Banner -->
-         <div class="shipping-banner text-center py-2 text-white">
-             Free shipping for orders 2000 PHP and above!
-         </div>
-     
-        <!-- Header -->
-        <header class="header py-3 px-4 d-flex justify-content-between align-items-center">
-            <img src="../public/images/logo.png" alt="Critter Craft Co Logo" class="logo" height="50">
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="./about.html" class="nav-link active">About</a>
-                <a href="./shop.html" class="nav-link">Shop</a>
-                <a href="./contact.html" class="nav-link">Contact</a>
-            </nav>
-            <a href="./cart.html" class="cart-container">
-                <img src="../public/images/icon-cart.png" alt="Cart" class="cart-icon">
-                <span class="cart-count">0</span>
-            </a>    
-        </header>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
-    <!-- Page Top and Bottom Background Section -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- About Page Content -->
     <section class="page-section">
         <div class="page-top-half"></div>
         <div class="page-bottom-half"></div>
 
-        <!-- About Section -->
         <div class="about-section">
             <div class="about-container">
-                <div class="about-image"></div>
+                <div class="about-image" style="background-image: url('../public/images/about-image.png');"></div>
                 <div class="about-text">
                     <h1>About Us</h1>
-                    <p>At Critter Craft Co., we specialize in crafting unique, personalized souvenirs perfect for any special occasion. From custom fridge magnets to personalized chip bags, each item is designed with love to add a memorable touch to your celebrations.
-
-                        We’re passionate about turning your ideas into one-of-a-kind keepsakes, ensuring quality and customer satisfaction every step of the way. Let us help make your special moments even more unforgettable.</p>
+                    <p>At Critter Craft Co., we specialize in crafting unique, personalized souvenirs perfect for any special occasion. From custom fridge magnets to personalized chip bags, each item is designed with love to add a memorable touch to your celebrations.</p>
+                    <p>We're passionate about turning your ideas into one-of-a-kind keepsakes, ensuring quality and customer satisfaction every step of the way. Let us help make your special moments even more unforgettable.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer mt-auto bg-dark text-white text-center py-3">
-        <p class="mb-1">&copy; 2024 Critter Craft Co. All Rights Reserved.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="https://www.facebook.com/profile.php?id=61556898350697" class="text-decoration-none footer-link">Facebook</a>
-            <a href="#" class="text-decoration-none footer-link">Instagram</a>
-            <a href="#" class="text-decoration-none footer-link">Twitter</a>
-        </div>
-    </footer>
-    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Component Loader and Main Script -->
+    <script type="module">
+        import { loadHeader, loadFooter } from '../js/utils/componentLoader.js';
+        import '../js/main.js';
+        
+        loadHeader();
+        loadFooter();
+    </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!-- Reusable Header Component -->
+<!-- Free Shipping Banner -->
+<div class="shipping-banner text-center py-2 text-white">
+    Free shipping for orders 2000 PHP and above!
+</div>
+
+<!-- Header -->
+<header class="header py-3 px-4">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Mobile Menu Toggle (Left side on mobile) -->
+            <button class="mobile-menu-toggle d-md-none" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Logo (Centered on mobile) -->
+            <a href="./index.html" class="logo-link" aria-label="Critter Craft Co Home" id="logo-link">
+                <img src="./public/images/logo.png" alt="Critter Craft Co Logo" class="logo" height="50" id="logo-img">
+            </a>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="nav d-none d-md-flex" role="navigation" aria-label="Main navigation">
+                <a href="./index.html" class="nav-link" data-page="home" id="nav-home">Home</a>
+                <a href="./pages/about.html" class="nav-link" data-page="about" id="nav-about">About</a>
+                <a href="./pages/shop.html" class="nav-link" data-page="shop" id="nav-shop">Shop</a>
+                <a href="./pages/contact.html" class="nav-link" data-page="contact" id="nav-contact">Contact</a>
+            </nav>
+
+            <!-- Mobile Navigation (Hidden by default, shown when menu is toggled) -->
+            <nav class="nav d-md-none" role="navigation" aria-label="Main navigation">
+                <a href="./index.html" class="nav-link" data-page="home" id="nav-home-mobile">Home</a>
+                <a href="./pages/about.html" class="nav-link" data-page="about" id="nav-about-mobile">About</a>
+                <a href="./pages/shop.html" class="nav-link" data-page="shop" id="nav-shop-mobile">Shop</a>
+                <a href="./pages/contact.html" class="nav-link" data-page="contact" id="nav-contact-mobile">Contact</a>
+            </nav>
+
+            <!-- Cart Icon (Right side) -->
+            <a href="./pages/cart.html" class="cart-container" aria-label="View shopping cart" id="cart-link">
+                <img src="./public/images/icon-cart.png" alt="Cart" class="cart-icon" id="cart-img">
+                <span class="cart-count" aria-live="polite">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+

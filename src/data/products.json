@@ -1,0 +1,159 @@
+[
+  {
+    "id": 1,
+    "name": "Customized Keychain",
+    "price": 50,
+    "image": "/images/item-image.png",
+    "description": "A personalized keychain that adds a unique touch to your daily essentials. Perfect for gifts and giveaways.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "accessories",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Birthday Magnet",
+    "price": 70,
+    "image": "/images/item-image.png",
+    "description": "Celebrate special birthdays with a custom magnet that serves as a memorable keepsake.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "magnets",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "Christening Souvenir",
+    "price": 80,
+    "image": "/images/item-image.png",
+    "description": "Elegant and meaningful souvenirs to commemorate a christening ceremony.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "souvenirs",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Customized Chip Bag",
+    "price": 60,
+    "image": "/images/item-image.png",
+    "description": "Add a creative flair to your events with these customized chip bags. Perfect for party favors!",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "party",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Fridge Magnet",
+    "price": 65,
+    "image": "/images/item-image.png",
+    "description": "Decorate your fridge with a personalized magnet that keeps your memories alive every day.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "magnets",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Personalized Mug",
+    "price": 90,
+    "image": "/images/item-image.png",
+    "description": "Start your day with your favorite beverage in a mug personalized just for you.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "drinkware",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Wedding Favor",
+    "price": 120,
+    "image": "/images/item-image.png",
+    "description": "Charming wedding favors to thank your guests for sharing in your special day.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "wedding",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Anniversary Gift",
+    "price": 150,
+    "image": "/images/item-image.png",
+    "description": "Celebrate love and milestones with a heartfelt anniversary gift tailored to your liking.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "gifts",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "name": "Graduation Keepsake",
+    "price": 85,
+    "image": "/images/item-image.png",
+    "description": "Mark a proud moment with a keepsake that celebrates academic achievements.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "keepsakes",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "name": "Holiday Ornament",
+    "price": 95,
+    "image": "/images/item-image.png",
+    "description": "Decorate your home for the holidays with a personalized ornament that spreads cheer.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "holiday",
+    "inStock": true
+  },
+  {
+    "id": 11,
+    "name": "Custom Notebook",
+    "price": 75,
+    "image": "/images/item-image.png",
+    "description": "A practical and stylish custom notebook for jotting down thoughts, ideas, and plans.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "stationery",
+    "inStock": true
+  },
+  {
+    "id": 12,
+    "name": "Personalized Pen",
+    "price": 30,
+    "image": "/images/item-image.png",
+    "description": "A sleek pen with a personal touch – perfect for daily use or as a thoughtful gift.",
+    "thumbnails": [
+      "/images/thumbnail1.png",
+      "/images/thumbnail2.png"
+    ],
+    "category": "stationery",
+    "inStock": true
+  }
+]
+
