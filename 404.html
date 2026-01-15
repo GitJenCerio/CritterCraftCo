@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Critter Craft Co</title>
+    <script>
+      // Redirect to index.html for GitHub Pages
+      // This ensures the React app loads correctly
+      var basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+      if (basePath && !basePath.endsWith('/')) {
+        basePath += '/';
+      }
+      window.location.replace(basePath + 'index.html');
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
