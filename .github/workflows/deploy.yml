@@ -35,12 +35,43 @@ jobs:
         id: repo
         run: echo "name=${GITHUB_REPOSITORY#*/}" >> $GITHUB_OUTPUT
       
+      - name: Determine base path
+        id: basepath
+        run: |
+          if [[ "${{ steps.repo.outputs.name }}" == *.github.io ]]; then
+            echo "path=/" >> $GITHUB_OUTPUT
+          else
+            echo "path=/${{ steps.repo.outputs.name }}/" >> $GITHUB_OUTPUT
+          fi
+      
       - name: Build
         run: npm run build
         env:
           NODE_ENV: production
           # Base path for GitHub Pages (project repos use /repo-name/, user sites use /)
-          VITE_BASE_PATH: /${{ steps.repo.outputs.name }}/
+          VITE_BASE_PATH: ${{ steps.basepath.outputs.path }}
+      
+      - name: Verify build output
+        run: |
+          echo "Base path used: ${{ steps.basepath.outputs.path }}"
+          echo "Checking dist/index.html..."
+          if [ -f dist/index.html ]; then
+            echo "index.html exists"
+            echo "Checking for source file references..."
+            if grep -q "/src/main.jsx" dist/index.html; then
+              echo "ERROR: index.html still contains /src/main.jsx - build may have failed!"
+              echo "First 30 lines of index.html:"
+              head -30 dist/index.html
+              exit 1
+            else
+              echo "✓ Script tag has been transformed correctly"
+              echo "First 20 lines of index.html:"
+              head -20 dist/index.html
+            fi
+          else
+            echo "ERROR: dist/index.html not found!"
+            exit 1
+          fi
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
